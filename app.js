@@ -11,7 +11,7 @@ function adicionarAmigo() {
         return;
     }
 
-    const nomeInput = document.getElementById('amigo').value.trim();
+    const nomeInput = document.getElementById('amigo').value.trim().toLowerCase();
 
     if (nomeInput !== '') {
         if (amigos.includes(nomeInput)) {
@@ -27,6 +27,7 @@ function adicionarAmigo() {
         listaAmigos.appendChild(novoItem);
 
         document.getElementById('amigo').value = '';
+        document.getElementById('amigo').focus(); // Focar no input após adicionar
     } else {
         alert('Por favor, digite um nome!');
     }
